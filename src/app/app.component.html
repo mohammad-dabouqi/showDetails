@@ -1,0 +1,8 @@
+
+    <button class="show-button" (click)="toggle()">
+{{buttonName}}
+    </button>
+ 
+    <p *ngIf="buttonName=='Hide details'"  appHighlight>Welcome im my app</p>
+
+    <p *ngFor="let toggle of toggles;let indx=index; ; "  [ngClass]="{'myClass':indx >=6}"  [style.color]="indx>=6">{{toggle}}</p>

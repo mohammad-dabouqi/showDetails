@@ -1,0 +1,8 @@
+body{
+    margin: 40px;
+  }
+
+  .myClass{
+      background-color: aqua;
+     color: azure;
+  }
