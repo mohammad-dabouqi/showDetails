@@ -27,5 +27,15 @@ private highlight(color: string) {
   this.el.nativeElement.style.backgroundColor = color;
 }
 
+@HostListener("scroll", ["$event"])
+onWindowScroll() {
+let pos = this.el.nativeElement.scrollTop  + this.el.nativeElement.offsetHeight;
+let max = this.el.nativeElement.scrollHeight;
+ if(pos >= max )   {
+  alert("End of Table");
+  console.log("End of table");
+ }
+} 
+
 }
 

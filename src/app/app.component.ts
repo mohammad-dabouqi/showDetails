@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import { LogsService } from './logs.service';
 
 @Component({
   selector: 'app-root',
@@ -9,20 +10,13 @@ import { DatePipe } from '@angular/common';
 export class AppComponent {
   title = 'Details';
 
-  show:boolean=false;
-  buttonName:any = 'Show Details';
-  toggles=[""];
+  constructor(private myService: LogsService){}
 
-  myDate=new Date();
+  show:boolean=false;
+  
   toggle() {
     this.show = !this.show;
-
-    if(this.show)  
-      this.buttonName = "Hide details";
-    else
-      this.buttonName = "Show details";
-
-      this.toggles.push("toggled on : "+ this.myDate);
+    this.myService.add(this.show); 
 }
  }
   

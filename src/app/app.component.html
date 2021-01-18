@@ -1,8 +1,16 @@
 
     <button class="show-button" (click)="toggle()">
-{{buttonName}}
+         Show
     </button>
  
     <p *ngIf="buttonName=='Hide details'"  appHighlight>Welcome im my app</p>
+    <div   appHighlight [ngClass]="{'scrollit':true}">
+        <table  class="table" *ngFor="let toggle of myService.toggles ;let indx=index;let time of myService.Time; ">
+            <tr *ngIf="indx!=0">
+                <td>{{indx}}</td>
+                <td>{{time}}</td>
+            </tr>
+          </table>
+    </div>
 
-    <p *ngFor="let toggle of toggles;let indx=index; ; "  [ngClass]="{'myClass':indx >=6}"  [style.color]="indx>=6">{{toggle}}</p>
+   
